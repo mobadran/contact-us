@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32"
+    href="./assets/images/favicon-32x32.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="dist/css/style.css">
+
+  <title>Contact Form</title>
+</head>
+
+<body>
+  <main>
+    <fieldset class="main-container">
+      <h1>Contact Us</h1>
+
+      <div class="row-name">
+        <!-- Input type text -->
+        <label for="firstName">First Name</label>
+        <label for="lastName" class="last-name-lab">Last Name</label>
+        <p class="required">This field is required</p>
+
+        <input type="text" name="firstName" id="firstName" class="first-name-in"
+          required>
+        <input type="text" name="lastName" id="lastName" class="last-name-in"
+          required>
+        <p class="required">This field is required</p>
+      </div>
+
+
+      <label for="email">Email Address</label>
+      <input type="email" name="email" id="email" class="email" required>
+      <p class="required">Please enter a valid email address</p>
+
+
+
+      <!-- Radio -->
+      <label for="query">Query Type</label>
+      <div class="query">
+        <label class="query-gen">
+          <input type="radio" name="query" class="radios" required>
+          <p>General Enquiry</p>
+        </label>
+        <label class="query-sup">
+          <input type="radio" name="query" class="radios">
+          <p>Support Request</p>
+        </label>
+      </div>
+      <p class="required">Please select a query type</p>
+
+
+
+      <!-- textarea -->
+      <label for="msg">Message</label>
+      <!-- <br> -->
+      <textarea name="msg" class="msg" rows="5" required></textarea>
+      <p class="required">This field is required</p>
+
+
+      <!-- Checkbox -->
+      <label class="consent">
+        <input type="checkbox" name="contacted" class="check" required>
+        <p class="contacted">I consent to being contacted by the team</p>
+      </label>
+      <p class="required">To submit this form, please consent to being
+        contacted</p>
+
+      <!-- Button -->
+      <button class="submit" type="submit">Submit</button>
+
+      <h4 class="sent">Message Sent! </h4>
+      <p class="sent">Thanks for completing the form. We'll be in touch soon!
+      </p>
+
+      <br>
+      <br>
+      <div class="attribution">
+        Challenge by <a
+          href="https://www.frontendmentor.io?ref=challenge">Frontend
+          Mentor</a>.
+        Coded by <strong>Badraan</strong>.
+      </div>
+      <script src="dist/js/index.js"></script>
+    </fieldset>
+  </main>
+</body>
+
+</html>

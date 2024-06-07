@@ -1,0 +1,6 @@
+node_modules/
+design/
+gulpfile.js
+*.json
+README-template.md
+style-guide.md

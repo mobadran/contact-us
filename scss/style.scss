@@ -1,0 +1,97 @@
+@use 'globals/functions'as *;
+@use 'globals/mixins'as *;
+@use 'globals/variables'as *;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Karla', sans-serif;
+    background-color: #e0f1e7;
+}
+
+main {
+    padding: rem(20);
+    margin: 2rem auto;
+    max-width: 80%;
+    background-color: white;
+    border-radius: 10px;
+}
+
+fieldset {
+    border: none;
+}
+
+label {
+    display: block;
+    padding-top: rem(10);
+    padding-bottom: rem(5);
+}
+
+input {
+    height: rem(40);
+    padding: 0.4rem;
+    @include border;
+}
+
+.required {
+    @extend label;
+    display: none;
+}
+
+.row-name {
+    display: grid;
+    grid-template-columns: 49% 49%;
+    gap: var(--INPUT-GAP);
+}
+
+
+.email {
+    width: 100%;
+}
+
+.query {
+    @extend .row-name;
+    gap: var(--INPUT-GAP);
+}
+
+.query-gen,
+.query-sup {
+    @extend input;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    gap: 0.5rem;
+}
+
+.msg {
+    width: 100%;
+    resize: none;
+    @include border;
+}
+
+.consent {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.submit {
+    width: 100%;
+    height: 3rem;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    color: white;
+    background-color: #0c7d69;
+    @include border;
+}
+
+.sent {
+    display: none;
+}
