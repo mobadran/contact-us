@@ -24,61 +24,66 @@
 <body>
   <main>
     <fieldset class="main-container">
-      <h1>Contact Us</h1>
+      <form id="form" action="https://httpbin.org/get" method="get">
+        <h1>Contact Us</h1>
 
-      <div class="row-name">
-        <!-- Input type text -->
-        <label for="firstName">First Name</label>
-        <label for="lastName" class="last-name-lab">Last Name</label>
+        <div class="row-name">
+          <!-- Input type text -->
+          <label for="firstName" class="req">First Name</label>
+          <label for="lastName" class="req">Last Name</label>
+          <p class="required">This field is required</p>
+
+          <input type="text" name="firstName" id="firstName"
+            class="first-name-in input" required>
+          <input type="text" name="lastName" id="lastName"
+            class="last-name-in input" required>
+          <p class="required">This field is required</p>
+        </div>
+
+
+        <label for="email" class="req">Email Address</label>
+        <input type="email" name="email" id="email" class="email input"
+          required>
+        <p class="required">Please enter a valid email address</p>
+
+
+
+        <!-- Radio -->
+        <label for="query" class="req">Query Type</label>
+        <div class="query">
+          <label class="query-gen input">
+            <input type="radio" name="query" class="radios" required>
+            <p>General Enquiry</p>
+          </label>
+          <label class="query-sup input">
+            <input type="radio" name="query" class="radios">
+            <p>Support Request</p>
+          </label>
+        </div>
+        <p class="required">Please select a query type</p>
+
+
+
+        <!-- textarea -->
+        <label for="msg" class="req">Message</label>
+        <!-- <br> -->
+        <textarea name="msg" class="msg input" rows="5" id="message"
+          required></textarea>
         <p class="required">This field is required</p>
 
-        <input type="text" name="firstName" id="firstName" class="first-name-in"
-          required>
-        <input type="text" name="lastName" id="lastName" class="last-name-in"
-          required>
-        <p class="required">This field is required</p>
-      </div>
 
-
-      <label for="email">Email Address</label>
-      <input type="email" name="email" id="email" class="email" required>
-      <p class="required">Please enter a valid email address</p>
-
-
-
-      <!-- Radio -->
-      <label for="query">Query Type</label>
-      <div class="query">
-        <label class="query-gen">
-          <input type="radio" name="query" class="radios" required>
-          <p>General Enquiry</p>
+        <!-- Checkbox -->
+        <label class="consent req">
+          <input type="checkbox" name="contacted" class="check" id="consent"
+            required>
+          <p class="contacted">I consent to being contacted by the team</p>
         </label>
-        <label class="query-sup">
-          <input type="radio" name="query" class="radios">
-          <p>Support Request</p>
-        </label>
-      </div>
-      <p class="required">Please select a query type</p>
+        <p class="required">To submit this form, please consent to being
+          contacted</p>
 
-
-
-      <!-- textarea -->
-      <label for="msg">Message</label>
-      <!-- <br> -->
-      <textarea name="msg" class="msg" rows="5" required></textarea>
-      <p class="required">This field is required</p>
-
-
-      <!-- Checkbox -->
-      <label class="consent">
-        <input type="checkbox" name="contacted" class="check" required>
-        <p class="contacted">I consent to being contacted by the team</p>
-      </label>
-      <p class="required">To submit this form, please consent to being
-        contacted</p>
-
-      <!-- Button -->
-      <button class="submit" type="submit">Submit</button>
+        <!-- Button -->
+        <button class="submit" type="submit">Submit</button>
+      </form>
 
       <h4 class="sent">Message Sent! </h4>
       <p class="sent">Thanks for completing the form. We'll be in touch soon!

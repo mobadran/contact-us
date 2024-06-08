@@ -1,3 +1,12 @@
 :root {
-    --INPUT-GAP: 2%
+    --INPUT-GAP: 2%;
+    --MAIN-WIDTH: 600px;
+    // colors
+    --LIGHT-GREEN: hsl(148, 38%, 91%);
+    --DARK-GREEN: hsl(169, 82%, 27%);
+    --DARKER-GREEN: hsl(171, 83%, 14%);
+    --RED: hsl(0, 66%, 54%);
+    --WHITE: hsl(0, 0%, 100%);
+    --LIGHT-GREY: hsl(186, 15%, 59%);
+    --DARK-GREY: hsl(187, 24%, 22%);
 }

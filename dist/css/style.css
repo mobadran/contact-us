@@ -1,5 +1,13 @@
 :root {
-  --INPUT-GAP: 2% ;
+  --INPUT-GAP: 2%;
+  --MAIN-WIDTH: 600px;
+  --LIGHT-GREEN: hsl(148, 38%, 91%);
+  --DARK-GREEN: hsl(169, 82%, 27%);
+  --DARKER-GREEN: hsl(171, 83%, 14%);
+  --RED: hsl(0, 66%, 54%);
+  --WHITE: hsl(0, 0%, 100%);
+  --LIGHT-GREY: hsl(186, 15%, 59%);
+  --DARK-GREY: hsl(187, 24%, 22%);
 }
 
 * {
@@ -10,13 +18,18 @@
 
 body {
   font-family: "Karla", sans-serif;
-  background-color: #e0f1e7;
+  background-color: var(--LIGHT-GREEN);
 }
 
 main {
-  padding: 1.25rem;
-  margin: 2rem auto;
-  max-width: 80%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  padding: 2rem;
+  margin: auto;
+  width: var(--MAIN-WIDTH);
   background-color: white;
   border-radius: 10px;
 }
@@ -27,16 +40,40 @@ fieldset {
 
 label, .required {
   display: block;
-  padding-top: 0.625rem;
-  padding-bottom: 0.3125rem;
+  padding-top: 1rem;
+  padding-bottom: 0.6rem;
 }
 
 input, .query-gen,
 .query-sup {
   height: 2.5rem;
   padding: 0.4rem;
-  border: hsl(146, 9%, 56%) solid 1px;
+  border: var(--LIGHT-GREY) solid 1.5px;
   border-radius: 7px;
+}
+
+textarea {
+  padding: 0.4rem;
+}
+
+input[type=radio], [type=radio].query-gen,
+[type=radio].query-sup,
+input[type=checkbox],
+[type=checkbox].query-gen,
+[type=checkbox].query-sup {
+  opacity: 20%;
+  accent-color: var(--LIGHT-GRAY);
+  cursor: pointer;
+  width: 15px;
+}
+
+input[type=radio]:checked, [type=radio].query-gen:checked,
+[type=radio].query-sup:checked,
+input[type=checkbox]:checked,
+[type=checkbox].query-gen:checked,
+[type=checkbox].query-sup:checked {
+  opacity: 1;
+  accent-color: var(--DARK-GREEN);
 }
 
 .required {
@@ -70,7 +107,7 @@ input, .query-gen,
 .msg {
   width: 100%;
   resize: none;
-  border: hsl(146, 9%, 56%) solid 1px;
+  border: var(--LIGHT-GREY) solid 1.5px;
   border-radius: 7px;
 }
 
@@ -87,11 +124,36 @@ input, .query-gen,
   font-weight: 500;
   letter-spacing: 0.5px;
   color: white;
-  background-color: #0c7d69;
-  border: hsl(146, 9%, 56%) solid 1px;
+  background-color: var(--DARK-GREEN);
+  border: var(--LIGHT-GREY) solid 1.5px;
   border-radius: 7px;
+}
+
+.submit:hover {
+  background-color: var(--DARKER-GREEN);
+  cursor: pointer;
 }
 
 .sent {
   display: none;
+}
+
+.req::after {
+  content: " *";
+  color: var(--DARK-GREEN);
+  padding-left: 4px;
+}
+
+.input:focus,
+.input:hover {
+  border-width: 1.9px;
+  border-color: var(--DARK-GREEN);
+  cursor: pointer;
+  outline: none;
+}
+
+.invalid .form-field {
+  /* Define your styles for invalid form fields here */
+  display: none;
+  /* Example: Red border color for invalid fields */
 }
