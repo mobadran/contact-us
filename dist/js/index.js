@@ -1,3 +1,9 @@
+// const sentWidth = document.getElementById('sent-container').clientWidth;
+// document.getElementById('sent-container').style.right = `calc(50% - ${sentWidth})`;
+
+
+
+// On Submit
 document.getElementById('form').addEventListener('submit', function (event) {
     event.preventDefault(); // Prevent the default form submission
 
@@ -60,6 +66,7 @@ document.getElementById('form').addEventListener('submit', function (event) {
     if (!validateEmail(email.value)) {
         email.classList.add('invalid');
         document.getElementById('email-p').style.display = 'block';
+        formIsValid = false;
     } else {
         email.classList.remove('invalid');
         document.getElementById('email-p').style.display = 'none';
@@ -97,6 +104,12 @@ document.getElementById('form').addEventListener('submit', function (event) {
     if (formIsValid) {
         console.log('Form is valid and ready to be submitted.');
         sendData();
+        document.getElementById('sent-container').style.display = 'flex';
+        document.getElementById('sent-container').style.animation = "finalAnim 6s forwards";
+        setTimeout(() => {
+            document.getElementById('sent-container').style.animation = "";
+            document.getElementById('sent-container').style.display = 'none';
+        }, 6000);
     } else {
         console.log('Form is invalid. Please fill out all required fields.');
     }

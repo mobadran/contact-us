@@ -60,6 +60,24 @@ input[type="checkbox"]:checked {
     accent-color: var(--DARK-GREEN);
 }
 
+.message-sent {
+    background-color: var(--DARKER-GREEN);
+    transform: translateY(1rem);
+    max-width: fit-content;
+    margin-inline: auto;
+    padding: 1.5rem;
+    border-radius: 10px;
+    color: var(--WHITE);
+    display: none;
+    flex-direction: column;
+}
+
+.sent-head {
+    display: flex;
+    gap: 6px;
+    padding-bottom: 0.5rem;
+}
+
 .required {
     padding: 0.7rem 0;
     color: var(--RED);
@@ -126,10 +144,6 @@ input[type="checkbox"]:checked {
     cursor: pointer;
 }
 
-.sent {
-    display: none;
-}
-
 .req::after {
     content: " *";
     color: var(--DARK-GREEN);
@@ -146,4 +160,27 @@ input[type="checkbox"]:checked {
 
 .invalid {
     border-color: var(--RED);
+}
+
+// .animation {
+//     animation-name: finalAnim;
+//     animation-duration: 6s;
+// }
+
+@keyframes finalAnim {
+    0% {
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
 }
