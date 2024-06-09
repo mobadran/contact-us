@@ -16,7 +16,7 @@ document.getElementById('form').addEventListener('submit', function (event) {
     const queryType = document.querySelector('input[name="query"]:checked');
     const message = document.getElementById('message');
     const consent = document.getElementById('consent');
-    const form = document.querySelector('#form');
+    const form = document.getElementById('form');
 
 
     // Functions
@@ -104,6 +104,7 @@ document.getElementById('form').addEventListener('submit', function (event) {
     if (formIsValid) {
         console.log('Form is valid and ready to be submitted.');
         sendData();
+        form.reset();
         document.getElementById('sent-container').style.display = 'flex';
         document.getElementById('sent-container').style.animation = "finalAnim 6s forwards";
         setTimeout(() => {
