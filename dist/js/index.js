@@ -60,6 +60,7 @@ document.getElementById('form').addEventListener('submit', function (event) {
     if (!validateEmail(email.value)) {
         email.classList.add('invalid');
         document.getElementById('email-p').style.display = 'block';
+        formIsValid = false;
     } else {
         email.classList.remove('invalid');
         document.getElementById('email-p').style.display = 'none';
