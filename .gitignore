@@ -4,3 +4,4 @@ gulpfile.js
 *.json
 README-template.md
 style-guide.md
+.gitignore

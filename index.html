@@ -24,27 +24,26 @@
 <body>
   <main>
     <fieldset class="main-container">
-      <form id="form" action="https://httpbin.org/get" method="get">
+      <form id="form">
         <h1>Contact Us</h1>
 
         <div class="row-name">
           <!-- Input type text -->
           <label for="firstName" class="req">First Name</label>
           <label for="lastName" class="req">Last Name</label>
-          <p class="required">This field is required</p>
 
           <input type="text" name="firstName" id="firstName"
-            class="first-name-in input" required>
+            class="first-name-in input">
           <input type="text" name="lastName" id="lastName"
-            class="last-name-in input" required>
-          <p class="required">This field is required</p>
+            class="last-name-in input">
+          <p class="required" id="firstName-p">This field is required</p>
+          <p class="required" id="lastName-p">This field is required</p>
         </div>
 
 
         <label for="email" class="req">Email Address</label>
-        <input type="email" name="email" id="email" class="email input"
-          required>
-        <p class="required">Please enter a valid email address</p>
+        <input type="email" name="email" id="email" class="email input">
+        <p class="required" id="email-p">Please enter a valid email address</p>
 
 
 
@@ -52,7 +51,7 @@
         <label for="query" class="req">Query Type</label>
         <div class="query">
           <label class="query-gen input">
-            <input type="radio" name="query" class="radios" required>
+            <input type="radio" name="query" class="radios">
             <p>General Enquiry</p>
           </label>
           <label class="query-sup input">
@@ -60,25 +59,24 @@
             <p>Support Request</p>
           </label>
         </div>
-        <p class="required">Please select a query type</p>
+        <p class="required" id="query-p">Please select a query type</p>
 
 
 
         <!-- textarea -->
         <label for="msg" class="req">Message</label>
         <!-- <br> -->
-        <textarea name="msg" class="msg input" rows="5" id="message"
-          required></textarea>
-        <p class="required">This field is required</p>
+        <textarea name="msg" class="msg input" rows="5" id="message"></textarea>
+        <p class="required" id="message-p">This field is required</p>
 
 
         <!-- Checkbox -->
         <label class="consent req">
-          <input type="checkbox" name="contacted" class="check" id="consent"
-            required>
+          <input type="checkbox" name="contacted" class="check" id="consent">
           <p class="contacted">I consent to being contacted by the team</p>
         </label>
-        <p class="required">To submit this form, please consent to being
+        <p class="required" id="consent-p">To submit this form, please consent
+          to being
           contacted</p>
 
         <!-- Button -->
@@ -92,10 +90,10 @@
       <br>
       <br>
       <div class="attribution">
-        Challenge by <a
-          href="https://www.frontendmentor.io?ref=challenge">Frontend
-          Mentor</a>.
-        Coded by <strong>Badraan</strong>.
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge"
+          target="_blank">Frontend
+          Mentor</a>. Coded by <a href="https://github.com/MidoBadran/"
+          target="_blank">Badraan</a>.
       </div>
       <script src="dist/js/index.js"></script>
     </fieldset>

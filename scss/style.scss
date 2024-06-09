@@ -61,7 +61,9 @@ input[type="checkbox"]:checked {
 }
 
 .required {
-    @extend label;
+    padding: 0.7rem 0;
+    color: var(--RED);
+    font-size: 0.9rem;
     display: none;
 }
 
@@ -138,8 +140,6 @@ input[type="checkbox"]:checked {
     outline: none;
 }
 
-.invalid .form-field {
-    /* Define your styles for invalid form fields here */
-    display: none;
-    /* Example: Red border color for invalid fields */
+.invalid {
+    border-color: var(--RED);
 }
