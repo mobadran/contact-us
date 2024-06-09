@@ -89,6 +89,10 @@ input[type=checkbox]:checked,
   gap: var(--INPUT-GAP);
 }
 
+.input {
+  width: 100%;
+}
+
 .email {
   width: 100%;
 }

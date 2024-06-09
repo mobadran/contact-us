@@ -10,12 +10,30 @@ document.getElementById('form').addEventListener('submit', function (event) {
     const queryType = document.querySelector('input[name="query"]:checked');
     const message = document.getElementById('message');
     const consent = document.getElementById('consent');
+    const form = document.querySelector('#form');
 
 
     // Functions
     function validateEmail(email) {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return emailRegex.test(email);
+    }
+
+    async function sendData() {
+        // Associate the FormData object with the form element
+        const formData = new FormData(form);
+
+        // Convert FormData to a query string
+        const queryString = new URLSearchParams(formData).toString();
+
+        try {
+            const response = await fetch(`https://httpbin.org/get?${queryString}`, {
+                method: "GET"
+            });
+            console.log(await response.json());
+        } catch (e) {
+            console.error(e);
+        }
     }
 
     // Validate first name
@@ -77,11 +95,9 @@ document.getElementById('form').addEventListener('submit', function (event) {
     }
 
     if (formIsValid) {
-        // Form is valid, you can proceed with form submission
         console.log('Form is valid and ready to be submitted.');
-        // You can submit the form here using AJAX or any other method
+        sendData();
     } else {
-        // Show a general error message or highlight the invalid fields
         console.log('Form is invalid. Please fill out all required fields.');
     }
 });

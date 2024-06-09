@@ -29,20 +29,24 @@
 
         <div class="row-name">
           <!-- Input type text -->
-          <label for="firstName" class="req">First Name</label>
-          <label for="lastName" class="req">Last Name</label>
+          <div class="first-name-container">
+            <label for="firstName" class="req">First Name</label>
+            <input type="text" name="firstName" id="firstName"
+              class="first-name-in input">
+            <p class="required" id="firstName-p">This field is required</p>
+          </div>
 
-          <input type="text" name="firstName" id="firstName"
-            class="first-name-in input">
-          <input type="text" name="lastName" id="lastName"
-            class="last-name-in input">
-          <p class="required" id="firstName-p">This field is required</p>
-          <p class="required" id="lastName-p">This field is required</p>
+          <div class="last-name-container">
+            <label for="lastName" class="req">Last Name</label>
+            <input type="text" name="lastName" id="lastName"
+              class="last-name-in input">
+            <p class="required" id="lastName-p">This field is required</p>
+          </div>
         </div>
 
 
         <label for="email" class="req">Email Address</label>
-        <input type="email" name="email" id="email" class="email input">
+        <input type="text" name="email" id="email" class="email input">
         <p class="required" id="email-p">Please enter a valid email address</p>
 
 
