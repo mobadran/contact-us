@@ -1,186 +1,246 @@
-@use 'globals/functions'as *;
-@use 'globals/mixins'as *;
-@use 'globals/variables'as *;
+// @use 'globals/functions'as *;
+// @use 'globals/mixins'as *;
+// @use 'globals/variables'as *;
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+// * {
+//     margin: 0;
+//     padding: 0;
+//     box-sizing: border-box;
+// }
+
+// body {
+//     font-family: 'Karla', sans-serif;
+//     background-color: var(--LIGHT-GREEN);
+// }
+
+// main {
+//     position: absolute;
+//     top: 50%;
+//     left: 50%;
+//     -ms-transform: translate(-50%, -50%);
+//     transform: translate(-50%, -50%);
+//     padding: 2rem;
+//     margin: auto;
+//     width: var(--MAIN-WIDTH);
+//     background-color: white;
+//     border-radius: 10px;
+// }
+
+// fieldset {
+//     border: none;
+// }
+
+// label {
+//     display: block;
+//     padding-top: 1rem;
+//     padding-bottom: 0.6rem;
+// }
+
+// input {
+//     height: rem(40);
+//     padding: 0.4rem;
+//     @include border;
+// }
+
+// textarea {
+//     padding: 0.4rem;
+// }
+
+// input[type="radio"],
+// input[type="checkbox"] {
+//     opacity: 20%;
+//     accent-color: var(--LIGHT-GRAY);
+//     cursor: pointer;
+//     width: 15px;
+// }
+
+// input[type="radio"]:checked,
+// input[type="checkbox"]:checked {
+//     opacity: 1;
+//     accent-color: var(--DARK-GREEN);
+// }
+
+// .message-sent {
+//     background-color: var(--DARKER-GREEN);
+//     transform: translateY(1rem);
+//     max-width: fit-content;
+//     margin-inline: auto;
+//     padding: 1.5rem;
+//     border-radius: 10px;
+//     color: var(--WHITE);
+//     display: none;
+//     flex-direction: column;
+// }
+
+// .sent-head {
+//     display: flex;
+//     gap: 6px;
+//     padding-bottom: 0.5rem;
+// }
+
+// .required {
+//     padding: 0.7rem 0;
+//     color: var(--RED);
+//     font-size: 0.9rem;
+//     display: none;
+// }
+
+// .row-name {
+//     display: grid;
+//     grid-template-columns: 49% 49%;
+//     gap: var(--INPUT-GAP);
+// }
+
+// .input {
+//     width: 100%;
+// }
+
+// .email {
+//     width: 100%;
+// }
+
+// .query {
+//     @extend .row-name;
+//     gap: var(--INPUT-GAP);
+// }
+
+// .query-gen,
+// .query-sup {
+//     @extend input;
+//     display: flex;
+//     align-items: center;
+//     padding: 10px 20px;
+//     border-radius: 5px;
+//     cursor: pointer;
+//     gap: 0.5rem;
+// }
+
+// .msg {
+//     width: 100%;
+//     resize: none;
+//     @include border;
+// }
+
+// .consent {
+//     display: flex;
+//     align-items: center;
+//     gap: 6px;
+// }
+
+// .submit {
+//     width: 100%;
+//     height: 3rem;
+//     font-size: 1rem;
+//     font-weight: 500;
+//     letter-spacing: 0.5px;
+//     color: white;
+//     background-color: var(--DARK-GREEN);
+//     @include border;
+// }
+
+// .submit:hover {
+//     background-color: var(--DARKER-GREEN);
+//     cursor: pointer;
+// }
+
+// .req::after {
+//     content: " *";
+//     color: var(--DARK-GREEN);
+//     padding-left: 4px;
+// }
+
+// .input:focus,
+// .input:hover {
+//     border-width: 1.9px;
+//     border-color: var(--DARK-GREEN);
+//     cursor: pointer;
+//     outline: none;
+// }
+
+// .invalid {
+//     border-color: var(--RED);
+// }
+
+// // .animation {
+// //     animation-name: finalAnim;
+// //     animation-duration: 6s;
+// // }
+
+// @keyframes finalAnim {
+//     0% {
+//         opacity: 0;
+//     }
+
+//     10% {
+//         opacity: 1;
+//     }
+
+//     90% {
+//         opacity: 1;
+//     }
+
+//     100% {
+//         opacity: 0;
+//     }
+// }
+
+.h-full {
+    min-height: 100vh;
 }
 
-body {
-    font-family: 'Karla', sans-serif;
-    background-color: var(--LIGHT-GREEN);
+header {
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    top: -200px;
+    margin-inline: auto;
+    min-width: 280px;
+    max-width: 600px;
+    transition: 2s all;
+}
+
+header.sent {
+    top: 20px;
 }
 
 main {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    padding: 2rem;
-    margin: auto;
-    width: var(--MAIN-WIDTH);
-    background-color: white;
-    border-radius: 10px;
+    max-width: 1200px;
+    min-width: 50%;
 }
 
-fieldset {
-    border: none;
-}
-
-label {
-    display: block;
-    padding-top: 1rem;
-    padding-bottom: 0.6rem;
-}
-
-input {
-    height: rem(40);
-    padding: 0.4rem;
-    @include border;
-}
-
-textarea {
-    padding: 0.4rem;
-}
-
-input[type="radio"],
-input[type="checkbox"] {
-    opacity: 20%;
-    accent-color: var(--LIGHT-GRAY);
-    cursor: pointer;
-    width: 15px;
-}
-
-input[type="radio"]:checked,
-input[type="checkbox"]:checked {
-    opacity: 1;
-    accent-color: var(--DARK-GREEN);
-}
-
-.message-sent {
-    background-color: var(--DARKER-GREEN);
-    transform: translateY(1rem);
-    max-width: fit-content;
-    margin-inline: auto;
-    padding: 1.5rem;
-    border-radius: 10px;
-    color: var(--WHITE);
-    display: none;
-    flex-direction: column;
-}
-
-.sent-head {
-    display: flex;
-    gap: 6px;
-    padding-bottom: 0.5rem;
-}
-
-.required {
-    padding: 0.7rem 0;
-    color: var(--RED);
-    font-size: 0.9rem;
-    display: none;
-}
-
-.row-name {
-    display: grid;
-    grid-template-columns: 49% 49%;
-    gap: var(--INPUT-GAP);
-}
-
-
-.input {
-    width: 100%;
-}
-
-.email {
-    width: 100%;
-}
-
-.query {
-    @extend .row-name;
-    gap: var(--INPUT-GAP);
-}
-
-.query-gen,
-.query-sup {
-    @extend input;
-    display: flex;
-    align-items: center;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    gap: 0.5rem;
-}
-
-.msg {
-    width: 100%;
-    resize: none;
-    @include border;
-}
-
-.consent {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
-
-.submit {
-    width: 100%;
-    height: 3rem;
-    font-size: 1rem;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-    color: white;
-    background-color: var(--DARK-GREEN);
-    @include border;
-}
-
-.submit:hover {
-    background-color: var(--DARKER-GREEN);
-    cursor: pointer;
-}
-
-.req::after {
-    content: " *";
-    color: var(--DARK-GREEN);
+.required::after {
+    content: "*";
     padding-left: 4px;
+    color: red;
 }
 
-.input:focus,
-.input:hover {
-    border-width: 1.9px;
-    border-color: var(--DARK-GREEN);
-    cursor: pointer;
-    outline: none;
+.invalid-input {
+    & > input,
+    & > textarea,
+    & > label.border {
+        border: 1px solid red !important;
+    }
+
+    .required-p {
+        display: block;
+    }
 }
 
-.invalid {
-    border-color: var(--RED);
+.other-validation {
+    & > input,
+    & > textarea,
+    & > label.border {
+        border: 1px solid red !important;
+    }
+
+    .validation-p {
+        display: block;
+    }
 }
 
-// .animation {
-//     animation-name: finalAnim;
-//     animation-duration: 6s;
-// }
-
-@keyframes finalAnim {
-    0% {
-        opacity: 0;
-    }
-
-    10% {
-        opacity: 1;
-    }
-
-    90% {
-        opacity: 1;
-    }
-
-    100% {
-        opacity: 0;
-    }
+.required-p,
+.validation-p {
+    display: none;
+    color: red;
+    opacity: 70%;
 }
